@@ -177,7 +177,6 @@ class NetamoThermostat {
         this.setThermostat(setpointData, () => {
             this.targetTemperature = temperature;
             this.heatingThresholdTemperature = temperature;
-            this.TargetHeatingCoolingState = Characteristic.TargetHeatingCoolingState.HEAT;
             if (temperature > this.temperature) {
                 this.heatingCoolingState = Characteristic.CurrentHeatingCoolingState.HEAT;
                 this.targetHeatingCoolingState = Characteristic.TargetHeatingCoolingState.HEAT;
@@ -191,6 +190,8 @@ class NetamoThermostat {
                 this.heatingThresholdTemperature);
             this.thermostatService.setCharacteristic(Characteristic.CurrentHeatingCoolingState,
                 this.heatingCoolingState);
+            this.thermostatService.setCharacteristic(Characteristic.TargetHeatingCoolingState,
+                this.targetHeatingCoolingState);
         });
     }
 
