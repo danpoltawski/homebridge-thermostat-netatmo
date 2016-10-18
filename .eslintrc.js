@@ -4,6 +4,9 @@ module.exports = {
         "node": true
     },
     "extends": "eslint:recommended",
+    "plugins": [
+        "promise"
+    ],
     "rules": {
         "indent": [
             "error",
@@ -26,6 +29,13 @@ module.exports = {
             15
         ],
         "complexity": [
+            "warn",
+            10
+        ],
+        "promise/param-names": [
+            "warn",
+        ],
+        "promise/catch-or-return": [
             "warn",
             10
         ],

@@ -20,5 +20,8 @@
     "simple-oauth2": "^1.0.0"
   },
   "main": "index.js",
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^3.8.1",
+    "eslint-plugin-promise": "^3.2.0"
+  }
 }
