@@ -39,11 +39,6 @@ class NetatmoThermostat {
     refreshThermostat(callback) {
         this.log('Loading themostat data from server');
 
-        this.auth.catch((reason) => {
-            // rejection
-            callback(reason);
-        });
-
         this.auth.then((token) => {
             if (token.expired()) {
                 return token.refresh();
@@ -86,6 +81,9 @@ class NetatmoThermostat {
             }
 
             callback(null);
+        }).catch((reason) => {
+            // rejection
+            callback(reason);
         });
     }
 
@@ -197,12 +195,6 @@ class NetatmoThermostat {
 
     setThermostat(setpointData, callback) {
         // TODO. Implement some sort of queue systme to prevent multiple updates.
-        this.auth.catch((reason) => {
-            // rejection
-            callback(reason);
-            return;
-        });
-
         this.auth.then((token) => {
             if (token.expired()) {
                 return token.refresh();
@@ -214,6 +206,10 @@ class NetatmoThermostat {
         })
         .then( () => {
             callback(null);
+        }).catch((reason) => {
+            // rejection
+            callback(reason);
+            return;
         });
     }
 
