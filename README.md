@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/danpoltawski/homebridge-thermostat-netatmo.svg?branch=master)](https://travis-ci.org/danpoltawski/homebridge-thermostat-netatmo)
+
 # homebridge-thermostat-netatmo
 
 A plugin for homebridge.
