@@ -1,14 +1,14 @@
 'use strict';
 var Service, Characteristic;
-var NetamoAPI = require('./netamo-api.js');
+var NetatmoAPI = require('./netatmo-api.js');
 
 module.exports = function(homebridge){
     Service = homebridge.hap.Service;
     Characteristic = homebridge.hap.Characteristic;
-    homebridge.registerAccessory('homebridge-thermostat-netamo', 'Netamo Thermostat', NetamoThermostat);
+    homebridge.registerAccessory('homebridge-thermostat-netatmo', 'Netatmo Thermostat', NetatmoThermostat);
 };
 
-class NetamoThermostat {
+class NetatmoThermostat {
     constructor(log, config) {
         this.log = log;
 
@@ -24,7 +24,7 @@ class NetamoThermostat {
         this.heatingCoolingState = Characteristic.CurrentHeatingCoolingState.OFF;
 
         this.targetHeatingCoolingState = Characteristic.TargetHeatingCoolingState.OFF;
-        this.api = new NetamoAPI(config.client_id, config.client_secret);
+        this.api = new NetatmoAPI(config.client_id, config.client_secret);
         this.auth = this.api.authenticate(config.username, config.password);
         this.thermostatService = new Service.Thermostat(this.name);
         this.refreshThermostat((error) => {

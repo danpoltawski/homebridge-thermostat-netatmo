@@ -2,7 +2,7 @@
 var request = require('request');
 var simpleoauth2 = require('simple-oauth2');
 
-class NetamoAPI {
+class NetatmoAPI {
     constructor(clientid, clientsecret) {
         const credentials = {
             client: {
@@ -13,7 +13,7 @@ class NetamoAPI {
                 tokenHost: 'https://api.netatmo.com/',
                 tokenPath: '/oauth2/token'
             },
-            http: { headers: { 'User-Agent': 'homebridge-thermostat-netamo' } }
+            http: { headers: { 'User-Agent': 'homebridge-thermostat-netatmo' } }
         };
 
         this._oauth2 = simpleoauth2.create(credentials);
@@ -43,7 +43,7 @@ class NetamoAPI {
                 qs: {'access_token': token.token.access_token}
             }, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
-                    var processedData = NetamoAPI.procesData(body);
+                    var processedData = NetatmoAPI.procesData(body);
                     if (!processedData) {
                         reject('No data found.');
                         return;
@@ -79,7 +79,7 @@ class NetamoAPI {
                 }
             }, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
-                    var processedData = NetamoAPI.processAPIResponse(body);
+                    var processedData = NetatmoAPI.processAPIResponse(body);
                     if (!processedData) {
                         reject('Setting thermostate state failed (invalid response)');
                         return;
@@ -130,4 +130,4 @@ class NetamoAPI {
     }
 }
 
-module.exports = NetamoAPI;
+module.exports = NetatmoAPI;

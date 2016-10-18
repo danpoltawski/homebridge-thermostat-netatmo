@@ -1,4 +1,4 @@
-# homebridge-thermostat-netamo
+# homebridge-thermostat-netatmo
 
 A plugin for homebridge.
 
@@ -8,7 +8,7 @@ A plugin for homebridge.
 
 "accessories": [
     {
-        "accessory": "Netamo Thermostat",
+        "accessory": "netatmo Thermostat",
         "name": "Thermostat",
         "client_id": "<clientid from https://dev.netatmo.com/>",
         "client_secret": "<secret from https://dev.netatmo.com/>",
