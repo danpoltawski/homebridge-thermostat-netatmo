@@ -8,7 +8,7 @@ A plugin for homebridge.
 
 "accessories": [
     {
-        "accessory": "netatmo Thermostat",
+        "accessory": "Netatmo Thermostat",
         "name": "Thermostat",
         "client_id": "<clientid from https://dev.netatmo.com/>",
         "client_secret": "<secret from https://dev.netatmo.com/>",
