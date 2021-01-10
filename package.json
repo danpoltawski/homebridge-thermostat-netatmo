@@ -1,6 +1,6 @@
 {
   "name": "homebridge-thermostat-netatmo",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "homebridge plugin for netatmo thermostat",
   "license": "GPL-3.0",
   "keywords": [
