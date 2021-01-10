@@ -1,0 +1,38 @@
+{
+    "pluginAlias": "Thermostat",
+    "pluginType": "accessory",
+    "singular": true,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "client_id": {
+                "title": "Client ID",
+                "type": "string",
+                "required": true,
+                "default": "",
+                "description": "Client ID from application  created in dev.netatmo.com"
+            },
+            "client_secret": {
+                "title": "Secret",
+                "type": "string",
+                "required": true,
+                "default": "",
+                "description": "Secret from application  created in dev.netatmo.com"
+            },
+            "username": {
+                "title": "Netatmo username",
+                "type": "string",
+                "required": true,
+                "default": "",
+                "description": ""
+            },
+            "password": {
+                "title": "Netatmo password",
+                "type": "string",
+                "required": true,
+                "default": "",
+                "description": ""
+            },
+        }
+    }
+}
