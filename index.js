@@ -45,46 +45,46 @@ class NetatmoThermostat {
             }
             return token;
         })
-        .then(this.api.getThermostatState)
-        .then( (data) => {
-            this.device_id = data.device_id;
-            this.module_id = data.module_id;
-            this.temperature = parseFloat(data.temperature);
-            this.targetTemperature = parseFloat(data.setPoint);
-            this.heatingThresholdTemperature = this.targetTemperature;
-            if (data.heatingOn) {
-                this.heatingCoolingState = Characteristic.CurrentHeatingCoolingState.HEAT;
-            } else {
-                this.heatingCoolingState = Characteristic.CurrentHeatingCoolingState.OFF;
-            }
+            .then(this.api.getThermostatState)
+            .then( (data) => {
+                this.device_id = data.device_id;
+                this.module_id = data.module_id;
+                this.temperature = parseFloat(data.temperature);
+                this.targetTemperature = parseFloat(data.setPoint);
+                this.heatingThresholdTemperature = this.targetTemperature;
+                if (data.heatingOn) {
+                    this.heatingCoolingState = Characteristic.CurrentHeatingCoolingState.HEAT;
+                } else {
+                    this.heatingCoolingState = Characteristic.CurrentHeatingCoolingState.OFF;
+                }
 
-            switch(data.mode) {
-            case 'away':
-            case 'hg':
-            case 'off':
-                this.targetHeatingCoolingState = Characteristic.TargetHeatingCoolingState.OFF;
-                break;
-            case 'manual':
-            case 'max':
-                this.targetHeatingCoolingState = Characteristic.TargetHeatingCoolingState.HEAT;
-                break;
-            case 'program':
-                this.targetHeatingCoolingState = Characteristic.TargetHeatingCoolingState.AUTO;
-                break;
-            default:
-                this.log('Unknown setpoint state');
-            }
+                switch(data.mode) {
+                case 'away':
+                case 'hg':
+                case 'off':
+                    this.targetHeatingCoolingState = Characteristic.TargetHeatingCoolingState.OFF;
+                    break;
+                case 'manual':
+                case 'max':
+                    this.targetHeatingCoolingState = Characteristic.TargetHeatingCoolingState.HEAT;
+                    break;
+                case 'program':
+                    this.targetHeatingCoolingState = Characteristic.TargetHeatingCoolingState.AUTO;
+                    break;
+                default:
+                    this.log('Unknown setpoint state');
+                }
 
-            if (this.targetTemperature < 10){
+                if (this.targetTemperature < 10){
                 // Homekit only goes as low as 10.
-                this.targetTemperature = 10;
-            }
+                    this.targetTemperature = 10;
+                }
 
-            callback(null);
-        }).catch((reason) => {
+                callback(null);
+            }).catch((reason) => {
             // rejection
-            callback(reason);
-        });
+                callback(reason);
+            });
     }
 
     setHeatingMode(callback) {
@@ -204,13 +204,13 @@ class NetatmoThermostat {
             setpointData['token'] = token;
             return this.api.setThermostat(setpointData);
         })
-        .then( () => {
-            callback(null);
-        }).catch((reason) => {
+            .then( () => {
+                callback(null);
+            }).catch((reason) => {
             // rejection
-            callback(reason);
-            return;
-        });
+                callback(reason);
+                return;
+            });
     }
 
     getCurrentHeatingCoolingState(callback) {
