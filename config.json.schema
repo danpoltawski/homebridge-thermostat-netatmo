@@ -32,7 +32,7 @@
                 "required": true,
                 "default": "",
                 "description": ""
-            },
+            }
         }
     }
 }
