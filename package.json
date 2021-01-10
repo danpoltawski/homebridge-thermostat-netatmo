@@ -1,13 +1,13 @@
 {
   "name": "homebridge-thermostat-netatmo",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "homebridge plugin for netatmo thermostat",
   "license": "GPL-3.0",
   "keywords": [
     "homebridge-plugin"
   ],
   "engines": {
-    "node": ">=4",
+    "node": ">=8",
     "homebridge": ">=0.2.5"
   },
   "author": "Dan Poltawski",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "request": "^2.88.2",
-    "simple-oauth2": "^1.6.0"
+    "simple-oauth2": "^3.4.0"
   },
   "main": "index.js",
   "devDependencies": {
