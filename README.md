@@ -2,7 +2,13 @@
 
 # homebridge-thermostat-netatmo
 
-A plugin for homebridge.
+A netatmo thermostat plugin for homebridge.
+
+To use this plugin, you need to register an application on the Netatmo developer platform
+
+1. Visit https://dev.netatmo.com/apps/createanapp#form (login with your netatmo account)
+2. Fill out the required application fields
+3. Copy and paste the client_id and client_secret into the configuraiton
 
 # Configuration
 
