@@ -5,7 +5,7 @@ var NetatmoAPI = require('./netatmo-api.js');
 module.exports = function(homebridge){
     Service = homebridge.hap.Service;
     Characteristic = homebridge.hap.Characteristic;
-    homebridge.registerAccessory('homebridge-thermostat-netatmo', 'Netatmo Thermostat', NetatmoThermostat);
+    homebridge.registerAccessory('homebridge-thermostat-netatmo', 'Netatmo-Thermostat', NetatmoThermostat);
 };
 
 class NetatmoThermostat {

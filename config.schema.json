@@ -1,5 +1,5 @@
 {
-    "pluginAlias": "homebridge-thermostat-netatmo",
+    "pluginAlias": "Netatmo-Thermostat",
     "pluginType": "accessory",
     "singular": true,
     "schema": {
