@@ -5,33 +5,39 @@
     "schema": {
         "type": "object",
         "properties": {
+            "name": {
+                "title": "Name",
+                "type": "string",
+                "required": true,
+                "default": "Netatmo Thermostat"
+            },
             "client_id": {
-                "title": "Client ID",
+                "title": "Netatmo App Client ID",
                 "type": "string",
                 "required": true,
                 "default": "",
-                "description": "Client ID from application  created in dev.netatmo.com"
+                "description": "Client ID from application created at https://dev.netatmo.com/apps/"
             },
             "client_secret": {
                 "title": "Secret",
                 "type": "string",
                 "required": true,
                 "default": "",
-                "description": "Secret from application  created in dev.netatmo.com"
+                "description": "Secret from application  created at https://dev.netatmo.com/apps/"
             },
             "username": {
-                "title": "Netatmo username",
+                "title": "Username",
                 "type": "string",
                 "required": true,
                 "default": "",
-                "description": ""
+                "description": "Your netatmo account username"
             },
             "password": {
-                "title": "Netatmo password",
+                "title": "Password",
                 "type": "string",
                 "required": true,
                 "default": "",
-                "description": ""
+                "description": "Your netatmo account password"
             }
         }
     }
