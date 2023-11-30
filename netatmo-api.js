@@ -39,7 +39,7 @@ class NetatmoAPI {
     getThermostatState(token) {
         var deffered = new Promise((resolve, reject) => {
             request({
-                url: 'https://api.netatmo.com/api/getthermostatsdata',
+                url: 'https://api.netatmo.com/api/homestatus',
                 qs: {'access_token': token.token.access_token}
             }, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
@@ -69,7 +69,7 @@ class NetatmoAPI {
         var deffered = new Promise((resolve, reject) => {
 
             request({
-                url: 'https://api.netatmo.com/api/setthermpoint',
+                url: 'https://api.netatmo.com/api/setroomthermpoint',
                 qs: {
                     'access_token': data['token'].token.access_token,
                     'device_id': data['device_id'],
